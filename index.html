@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Aalishan Mustafa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #1a1a1a; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    }
+    .hero-inner { max-width: 700px; }
+    .hero-badge {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #555;
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #2d7a4f; }
+    .hero p {
+      font-size: 18px;
+      color: #666;
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #1a1a1a;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #333; transform: translateY(-1px); }
+    .btn-secondary {
+      background: #fff;
+      color: #1a1a1a;
+      border: 1.5px solid #ddd;
+    }
+    .btn-secondary:hover { border-color: #999; transform: translateY(-1px); }
+
+    /* SECTION */
+    section { padding: 80px 20px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #2d7a4f;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 17px;
+      color: #666;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    /* ABOUT */
+    #about { background: #fafafa; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-text p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #2d7a4f;
+      display: block;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-card:hover {
+      border-color: #2d7a4f;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .project-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .project-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .project-desc {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .project-tag {
+      display: inline-block;
+      background: #f0f7f3;
+      color: #2d7a4f;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* SOCIAL */
+    #social { background: #fafafa; }
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border: 1.5px solid #eee;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+      background: #fff;
+    }
+    .social-link:hover {
+      border-color: #2d7a4f;
+      color: #2d7a4f;
+      transform: translateY(-2px);
+    }
+    .social-icon { font-size: 18px; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #eee;
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Aalishan Mustafa</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#social">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🕌 Islamic Researcher & Web Developer</div>
+      <h1>Muhammad<br><span>Aalishan Mustafa</span></h1>
+      <p>Building authentic Islamic knowledge platforms for the digital age — one fatwa at a time.</p>
+      <div class="hero-btns">
+        <a href="https://sunnifatwa.in" target="_blank" class="btn btn-primary">Visit SunniFatwa.in →</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Researcher.<br>Developer.<br>Builder.</h2>
+          <p>I am an Islamic researcher and self-taught web developer based in Ahmedabad, India. I work in the research and publication department of Dawat-e-Islami India.</p>
+          <p>I founded <strong>SunniFatwa.in</strong> — an Urdu Islamic fatwa encyclopedia — to bring the authentic fatwas of Ahle Sunnat wal Jamaat online in a searchable, accessible format.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">50+</span>
+            <div class="stat-label">Fiqhi Books Digitizing</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">1L+</span>
+            <div class="stat-label">Pages to Digitize</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <div class="stat-label">Languages</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">2600+</span>
+            <div class="stat-label">Words in Glossary</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">What I've Built</h2>
+      <p class="section-desc">Focused on making authentic Islamic knowledge accessible to everyone online.</p>
+      <div class="projects-grid">
+        <a href="https://sunnifatwa.in" target="_blank" class="project-card">
+          <span class="project-icon">🕌</span>
+          <div class="project-name">SunniFatwa.in</div>
+          <div class="project-desc">Urdu Islamic fatwa encyclopedia with AI search, 7 themes, multilingual translations, contributor portal, and PWA support.</div>
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">AI Search</span>
+          <span class="project-tag">PWA</span>
+        </a>
+        <a href="https://sunnifatwa.in/translations" target="_blank" class="project-card">
+          <span class="project-icon">🌐</span>
+          <div class="project-name">Multilingual Fatwas</div>
+          <div class="project-desc">Translating Islamic fatwas into English, Hindi, Arabic and Roman Urdu — making them accessible to a global audience.</div>
+          <span class="project-tag">English</span>
+          <span class="project-tag">Hindi</span>
+          <span class="project-tag">Arabic</span>
+        </a>
+        <a href="https://sunnifatwa.in/maakhaz" target="_blank" class="project-card">
+          <span class="project-icon">📚</span>
+          <div class="project-name">Fatwa Digitization</div>
+          <div class="project-desc">Digitizing 50+ classical Islamic books spanning 1 lakh+ pages into searchable Unicode format for the first time.</div>
+          <span class="project-tag">Research</span>
+          <span class="project-tag">Islamic</span>
+          <span class="project-tag">Unicode</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section id="social">
+    <div class="container">
+      <div class="section-label">Connect</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-desc">Feel free to reach out for collaboration, research, or just to say Salam!</p>
+      <div class="social-grid">
+        <a href="mailto:info@sunnifatwa.in" class="social-link">
+          <span class="social-icon">✉️</span> info@sunnifatwa.in
+        </a>
+        <a href="https://sunnifatwa.in/founder" target="_blank" class="social-link">
+          <span class="social-icon">🌐</span> sunnifatwa.in/founder
+        </a>
+        <a href="https://in.linkedin.com/in/aalishanmustafa" target="_blank" class="social-link">
+          <span class="social-icon">💼</span> LinkedIn
+        </a>
+        <a href="https://x.com/AalishanMustafa" target="_blank" class="social-link">
+          <span class="social-icon">🐦</span> Twitter / X
+        </a>
+        <a href="https://www.youtube.com/@aalishanmustafa" target="_blank" class="social-link">
+          <span class="social-icon">📺</span> YouTube
+        </a>
+        <a href="https://www.instagram.com/aalishanmustafa" target="_blank" class="social-link">
+          <span class="social-icon">📸</span> Instagram
+        </a>
+        <a href="https://www.facebook.com/aalishanmustafa1" target="_blank" class="social-link">
+          <span class="social-icon">📘</span> Facebook
+        </a>
+        <a href="https://t.me/AalishanMustafa" target="_blank" class="social-link">
+          <span class="social-icon">✈️</span> Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Muhammad Aalishan Mustafa &nbsp;·&nbsp;
+    <a href="https://sunnifatwa.in" style="color:#2d7a4f;text-decoration:none;">SunniFatwa.in</a></p>
+  </footer>
+
+</body>
+</html>
