@@ -6,258 +6,118 @@
   <title>Muhammad Aalishan Mustafa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #1a1a1a;
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #eee;
       padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       z-index: 100;
     }
-    .nav-logo {
-      font-weight: 700;
-      font-size: 18px;
-      color: #1a1a1a;
-      text-decoration: none;
-    }
+    .nav-logo { font-weight: 700; font-size: 18px; color: #1a1a1a; text-decoration: none; }
     .nav-links { display: flex; gap: 32px; }
-    .nav-links a {
-      text-decoration: none;
-      color: #555;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    .nav-links a { text-decoration: none; color: #555; font-size: 14px; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: #1a1a1a; }
 
-    /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; text-align: center;
       padding: 100px 20px 60px;
       background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
     }
     .hero-inner { max-width: 700px; }
     .hero-badge {
-      display: inline-block;
-      background: #f0f0f0;
-      color: #555;
-      font-size: 13px;
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 24px;
-      font-weight: 500;
+      display: inline-block; background: #f0f0f0; color: #555;
+      font-size: 13px; padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 24px; font-weight: 500;
     }
     .hero h1 {
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-size: clamp(36px, 6vw, 64px); font-weight: 700;
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 20px;
     }
     .hero h1 span { color: #2d7a4f; }
-    .hero p {
-      font-size: 18px;
-      color: #666;
-      max-width: 500px;
-      margin: 0 auto 36px;
-    }
+    .hero p { font-size: 18px; color: #666; max-width: 500px; margin: 0 auto 36px; }
     .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn {
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      display: inline-block;
+      padding: 12px 28px; border-radius: 8px; font-size: 15px;
+      font-weight: 600; text-decoration: none; transition: all 0.2s; display: inline-block;
     }
-    .btn-primary {
-      background: #1a1a1a;
-      color: #fff;
-    }
+    .btn-primary { background: #1a1a1a; color: #fff; }
     .btn-primary:hover { background: #333; transform: translateY(-1px); }
-    .btn-secondary {
-      background: #fff;
-      color: #1a1a1a;
-      border: 1.5px solid #ddd;
-    }
+    .btn-secondary { background: #fff; color: #1a1a1a; border: 1.5px solid #ddd; }
     .btn-secondary:hover { border-color: #999; transform: translateY(-1px); }
 
-    /* SECTION */
     section { padding: 80px 20px; }
     .container { max-width: 900px; margin: 0 auto; }
     .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #2d7a4f;
-      margin-bottom: 12px;
+      font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: #2d7a4f; margin-bottom: 12px;
     }
-    .section-title {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      font-size: 17px;
-      color: #666;
-      max-width: 600px;
-      margin-bottom: 48px;
-    }
+    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .section-desc { font-size: 17px; color: #666; max-width: 600px; margin-bottom: 48px; }
 
-    /* ABOUT */
     #about { background: #fafafa; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .about-text p {
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .stat-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-    }
-    .stat-number {
-      font-size: 32px;
-      font-weight: 700;
-      color: #2d7a4f;
-      display: block;
-    }
-    .stat-label {
-      font-size: 13px;
-      color: #888;
-      margin-top: 4px;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-text p { color: #555; font-size: 16px; margin-bottom: 16px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 24px; text-align: center; }
+    .stat-number { font-size: 32px; font-weight: 700; color: #2d7a4f; display: block; }
+    .stat-label { font-size: 13px; color: #888; margin-top: 4px; }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .project-card {
-      border: 1px solid #eee;
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
+      border: 1px solid #eee; border-radius: 16px; padding: 28px;
+      transition: all 0.2s; text-decoration: none; color: inherit; display: block;
     }
-    .project-card:hover {
-      border-color: #2d7a4f;
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-    }
-    .project-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .project-name {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .project-desc {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
+    .project-card:hover { border-color: #2d7a4f; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .project-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+    .project-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .project-desc { font-size: 14px; color: #666; margin-bottom: 16px; line-height: 1.6; }
     .project-tag {
-      display: inline-block;
-      background: #f0f7f3;
-      color: #2d7a4f;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 100px;
-      margin-right: 6px;
-      margin-bottom: 4px;
+      display: inline-block; background: #f0f7f3; color: #2d7a4f;
+      font-size: 12px; font-weight: 600; padding: 4px 10px;
+      border-radius: 100px; margin-right: 6px; margin-bottom: 4px;
     }
 
-    /* SOCIAL */
     #social { background: #fafafa; }
-    .social-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .social-grid { display: flex; flex-wrap: wrap; gap: 12px; }
     .social-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
-      border: 1.5px solid #eee;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #1a1a1a;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s;
-      background: #fff;
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 20px; border: 1.5px solid #eee; border-radius: 10px;
+      text-decoration: none; color: #1a1a1a; font-size: 14px; font-weight: 500;
+      transition: all 0.2s; background: #fff; min-width: 160px;
     }
-    .social-link:hover {
-      border-color: #2d7a4f;
-      color: #2d7a4f;
-      transform: translateY(-2px);
-    }
-    .social-icon { font-size: 18px; }
+    .social-link:hover { border-color: #2d7a4f; color: #2d7a4f; transform: translateY(-2px); }
+    .social-link i { font-size: 18px; width: 20px; text-align: center; }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #eee;
-      color: #999;
-      font-size: 14px;
-    }
+    /* Brand colors on hover */
+    .social-link.fb:hover { border-color: #1877F2; color: #1877F2; }
+    .social-link.ig:hover { border-color: #E4405F; color: #E4405F; }
+    .social-link.tw:hover { border-color: #000; color: #000; }
+    .social-link.yt:hover { border-color: #FF0000; color: #FF0000; }
+    .social-link.li:hover { border-color: #0077B5; color: #0077B5; }
+    .social-link.tg:hover { border-color: #26A5E4; color: #26A5E4; }
+    .social-link.wa:hover { border-color: #25D366; color: #25D366; }
+    .social-link.pi:hover { border-color: #E60023; color: #E60023; }
 
-    /* RESPONSIVE */
+    footer { text-align: center; padding: 40px 20px; border-top: 1px solid #eee; color: #999; font-size: 14px; }
+
     @media (max-width: 640px) {
       nav { padding: 14px 20px; }
       .nav-links { gap: 16px; }
       .about-grid { grid-template-columns: 1fr; }
+      .social-link { min-width: 140px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Aalishan Mustafa</a>
     <div class="nav-links">
@@ -267,7 +127,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-badge">🕌 Islamic Researcher & Web Developer</div>
@@ -280,39 +139,25 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
           <div class="section-label">About Me</div>
           <h2 class="section-title">Researcher.<br>Developer.<br>Builder.</h2>
-          <p>I am an Islamic researcher and self-taught web developer based in Ahmedabad, India. I work in the research and publication department of Dawat-e-Islami India.</p>
+          <p>I am an Islamic researcher and self-taught web developer based in Ahmedabad, India.</p>
           <p>I founded <strong>SunniFatwa.in</strong> — an Urdu Islamic fatwa encyclopedia — to bring the authentic fatwas of Ahle Sunnat wal Jamaat online in a searchable, accessible format.</p>
         </div>
         <div class="about-stats">
-          <div class="stat-card">
-            <span class="stat-number">50+</span>
-            <div class="stat-label">Fiqhi Books Digitizing</div>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">1L+</span>
-            <div class="stat-label">Pages to Digitize</div>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">4</span>
-            <div class="stat-label">Languages</div>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">2600+</span>
-            <div class="stat-label">Words in Glossary</div>
-          </div>
+          <div class="stat-card"><span class="stat-number">50+</span><div class="stat-label">Fiqhi Books Digitizing</div></div>
+          <div class="stat-card"><span class="stat-number">1L+</span><div class="stat-label">Pages to Digitize</div></div>
+          <div class="stat-card"><span class="stat-number">4</span><div class="stat-label">Languages</div></div>
+          <div class="stat-card"><span class="stat-number">2600+</span><div class="stat-label">Words in Glossary</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
       <div class="section-label">Projects</div>
@@ -348,7 +193,6 @@
     </div>
   </section>
 
-  <!-- SOCIAL -->
   <section id="social">
     <div class="container">
       <div class="section-label">Connect</div>
@@ -356,34 +200,39 @@
       <p class="section-desc">Feel free to reach out for collaboration, research, or just to say Salam!</p>
       <div class="social-grid">
         <a href="mailto:info@sunnifatwa.in" class="social-link">
-          <span class="social-icon">✉️</span> info@sunnifatwa.in
+          <i class="fa-solid fa-envelope"></i> info@sunnifatwa.in
         </a>
         <a href="https://sunnifatwa.in/founder" target="_blank" class="social-link">
-          <span class="social-icon">🌐</span> sunnifatwa.in/founder
+          <i class="fa-solid fa-globe"></i> SunniFatwa.in
         </a>
-        <a href="https://in.linkedin.com/in/aalishanmustafa" target="_blank" class="social-link">
-          <span class="social-icon">💼</span> LinkedIn
+        <a href="https://in.linkedin.com/in/aalishanmustafa" target="_blank" class="social-link li">
+          <i class="fa-brands fa-linkedin-in"></i> LinkedIn
         </a>
-        <a href="https://x.com/AalishanMustafa" target="_blank" class="social-link">
-          <span class="social-icon">🐦</span> Twitter / X
+        <a href="https://x.com/AalishanMustafa" target="_blank" class="social-link tw">
+          <i class="fa-brands fa-x-twitter"></i> Twitter / X
         </a>
-        <a href="https://www.youtube.com/@aalishanmustafa" target="_blank" class="social-link">
-          <span class="social-icon">📺</span> YouTube
+        <a href="https://www.youtube.com/@aalishanmustafa" target="_blank" class="social-link yt">
+          <i class="fa-brands fa-youtube"></i> YouTube
         </a>
-        <a href="https://www.instagram.com/aalishanmustafa" target="_blank" class="social-link">
-          <span class="social-icon">📸</span> Instagram
+        <a href="https://www.instagram.com/aalishanmustafa" target="_blank" class="social-link ig">
+          <i class="fa-brands fa-instagram"></i> Instagram
         </a>
-        <a href="https://www.facebook.com/aalishanmustafa1" target="_blank" class="social-link">
-          <span class="social-icon">📘</span> Facebook
+        <a href="https://www.facebook.com/aalishanmustafa1" target="_blank" class="social-link fb">
+          <i class="fa-brands fa-facebook-f"></i> Facebook
         </a>
-        <a href="https://t.me/AalishanMustafa" target="_blank" class="social-link">
-          <span class="social-icon">✈️</span> Telegram
+        <a href="https://t.me/AalishanMustafa" target="_blank" class="social-link tg">
+          <i class="fa-brands fa-telegram"></i> Telegram
+        </a>
+        <a href="https://whatsapp.com/channel/0029Va5RqCB1HspxXEN1432U" target="_blank" class="social-link wa">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://in.pinterest.com/aalishanmustafa" target="_blank" class="social-link pi">
+          <i class="fa-brands fa-pinterest-p"></i> Pinterest
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2026 Muhammad Aalishan Mustafa &nbsp;·&nbsp;
     <a href="https://sunnifatwa.in" style="color:#2d7a4f;text-decoration:none;">SunniFatwa.in</a></p>
